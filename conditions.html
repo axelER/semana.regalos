@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Semana de Regalos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <div class="card success">
+
+      <div class="icon">🎁</div>
+
+      <h1>SEMANA DE REGALOS!</h1>
+
+      <p class="conditions-text">
+        Durante cinco días podrás recibir un regalo
+        distinto cada día de forma consecutiva,
+        nuestro primer día será el Martes 12 de Mayo,
+        recibirás tu último regalo el día Sábado 16 de Mayo.
+      </p>
+
+      <p class="conditions-text">
+        ❤️ ¿Porque estas recibiendo estos regalos?
+        <br><br>
+        No hay porque, simplemente porque te amo
+        y soy un excelente novio.
+      </p>
+
+      <div class="terms-box">
+
+        <h2>Terminos y condiciones</h2>
+
+        <label class="checkbox-item">
+          <input type="checkbox" id="check1">
+          <span>
+            El regalo debe reclamarse después de cenar
+            y antes de las 23:59hs del día en curso.
+          </span>
+        </label>
+
+        <label class="checkbox-item">
+          <input type="checkbox" id="check2">
+          <span>
+            Si por X motivo no reclamás el regalo un día,
+            tendrás que esperar al día siguiente para hacer
+            el reclamo, pero serás penalizada con
+            15 minutos de masajes.
+          </span>
+        </label>
+
+      </div>
+
+      <div class="button-group">
+
+        <button
+          id="acceptButton"
+          disabled
+          onclick="acceptTerms()"
+        >
+          Acepto
+        </button>
+
+        <a href="index.html">
+          <button class="secondary-button">
+            No acepto
+          </button>
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    const check1 = document.getElementById("check1");
+    const check2 = document.getElementById("check2");
+    const acceptButton =
+      document.getElementById("acceptButton");
+
+    function validateChecks() {
+      acceptButton.disabled =
+        !(check1.checked && check2.checked);
+    }
+
+    check1.addEventListener(
+      "change",
+      validateChecks
+    );
+
+    check2.addEventListener(
+      "change",
+      validateChecks
+    );
+
+    function acceptTerms() {
+      window.location.href = "final.html";
+    }
+  </script>
+
+</body>
+</html>
